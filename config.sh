@@ -35,6 +35,13 @@ BRANCH=${BRANCH:-master}
 
 while [ $# -ge 1 ]; do
 	case $1 in
+	"miphone")
+
+echo DEVICE=device-name >> .tmp-config &&
+
+repo_sync $1
+
+;;
 	-d|-l|-f|-n|-c|-q)
 		sync_flags="$sync_flags $1"
 		shift
